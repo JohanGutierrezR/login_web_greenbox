@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS nodelogin;
+
+USE nodelogin;
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    name VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+-- Corregir sentencia GRANT
+GRANT ALL PRIVILEGES ON nodelogin.* TO 'root'@'localhost' IDENTIFIED BY '';
+FLUSH PRIVILEGES;
